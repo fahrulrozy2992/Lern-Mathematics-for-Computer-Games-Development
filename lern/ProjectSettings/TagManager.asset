@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - MACIG
+  - CHARISMA
+  - FLY
+  - INTELLIGENCE
+  - INVISIBLE
+  - MAGIC
+  - Add
+  - ERS
+  - Delet
   layers:
   - Default
   - TransparentFX
