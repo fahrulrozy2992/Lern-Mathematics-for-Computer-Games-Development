@@ -12,7 +12,7 @@ public class AttributeManager : MonoBehaviour
 	static public int FLY = 2;
 	static public int INVISIBLE	= 1;
 	public Text attributeDisplay;
-	int attributes =0;
+	public int attributes =0;
 	// Start is called before the first frame update
 	private void OnTriggerEnter(Collider col)
 	{

@@ -13,6 +13,7 @@ TagManager:
   - Add
   - ERS
   - Delet
+  - MAGIC_DOOR
   layers:
   - Default
   - TransparentFX
