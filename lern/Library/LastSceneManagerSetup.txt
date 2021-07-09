@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scene/Bagian 2/Bitwise Operations/BitSetting.unity
+- path: Assets/Scene/Bagian 2/Bit Shifting/Bit Shifting.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
