@@ -6,17 +6,29 @@ using System;
 
 public class AttributeManager : MonoBehaviour
 {
-	static public int MAGIC = 16;
+	static public int GREEN_KEY = 2;
+	static public int BLUE_KEY = 1;
+	/*static public int MAGIC = 16;
 	static public int INTELLIGENCE = 8;
 	static public int CHARISMA = 4;
 	static public int FLY = 2;
-	static public int INVISIBLE	= 1;
+	static public int INVISIBLE	= 1;*/
 	public Text attributeDisplay;
 	public int attributes =0;
 	// Start is called before the first frame update
 	private void OnTriggerEnter(Collider col)
 	{
-		if(col.gameObject.tag =="MAGIC")
+		if(col.gameObject.tag == "GREEN_KEY")
+		{
+			attributes |= GREEN_KEY;
+			Destroy(col.gameObject);
+		}
+		else if(col.gameObject.tag == "BLUE_KEY")
+		{
+			attributes |= BLUE_KEY;
+			Destroy(col.gameObject);
+		}
+		/*if(col.gameObject.tag =="MAGIC")
 		{
 			attributes |= MAGIC;
 		}
@@ -47,7 +59,7 @@ public class AttributeManager : MonoBehaviour
 		else if(col.gameObject.tag == "Delet")
 		{
 			attributes = 0;
-		}
+		}*/
 	}
     void Start()
     {
