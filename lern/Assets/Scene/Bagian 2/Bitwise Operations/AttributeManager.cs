@@ -8,16 +8,40 @@ public class AttributeManager : MonoBehaviour
 {
 	static public int GREEN_KEY = 2;
 	static public int BLUE_KEY = 1;
-	/*static public int MAGIC = 16;
+	
+	static public int MAGIC = 16;
 	static public int INTELLIGENCE = 8;
 	static public int CHARISMA = 4;
 	static public int FLY = 2;
-	static public int INVISIBLE	= 1;*/
+	static public int INVISIBLE	= 1;
 	public Text attributeDisplay;
 	public int attributes =0;
 	// Start is called before the first frame update
 	private void OnTriggerEnter(Collider col)
 	{
+		//ini bit Tonggling
+		if(col.gameObject.tag =="MAGIC")
+		{
+			attributes ^= MAGIC;
+		}
+		else if(col.gameObject.tag =="INTELLIGENCE")
+		{
+			attributes ^= INTELLIGENCE;
+		}
+		else if(col.gameObject.tag =="CHARISMA")
+		{
+			attributes ^= CHARISMA;
+		}
+		else if(col.gameObject.tag == "FLY")
+		{
+			attributes ^= FLY;
+		}
+		else if(col.gameObject.tag == "INVISIBLE")
+		{
+			attributes ^= INVISIBLE;
+		}
+		
+		//ini bukan
 		if(col.gameObject.tag == "GREEN_KEY")
 		{
 			attributes |= GREEN_KEY;
