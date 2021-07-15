@@ -13,6 +13,7 @@ public class CreateBoard : MonoBehaviour
 	public Text score;
 	GameObject[] tiles;
 	long dirtbb = 0;
+	long desetbb = 0;
 	long treebb =0;
 	long playerbb =0;
     // Start is called before the first frame update
@@ -33,6 +34,11 @@ public class CreateBoard : MonoBehaviour
 	    		if(tile.tag == "Dirt")
 	    		{
 	    			dirtbb = SetCellState(dirtbb,r,c);
+	    			//PrintBB("Dirt",dirtbb);
+	    		}
+	    		else if(tile.tag == "Desert")
+	    		{
+	    			desetbb = SetCellState(desetbb,r,c);
 	    			//PrintBB("Dirt",dirtbb);
 	    		}
 	    	}
@@ -85,6 +91,10 @@ public class CreateBoard : MonoBehaviour
 		}
 		return count;
 	}
+	void CalculatScore()
+	{
+		score.text = "Score: "+((CellCount(dirtbb & playerbb)*10) + (CellCount(desetbb & playerbb) * 20));
+	}
 
     // Update is called once per frame
     void Update()
@@ -99,12 +109,13 @@ public class CreateBoard : MonoBehaviour
 	    		int r = (int)hit.collider.gameObject.transform.position.z;
 	    		int c = (int)hit.collider.gameObject.transform.position.x;
 	    		
-	    		if(GetCellState(dirtbb & ~treebb,r,c))
+	    		if(GetCellState((dirtbb & ~treebb) | desetbb,r,c))
 	    		{
 	    			GameObject house = Instantiate(housePrefab);
 	    			house.transform.parent = hit.collider.gameObject.transform;
 		    		house.transform.localPosition = Vector3.zero;
 		    		playerbb = SetCellState(playerbb,r,c);
+		    		CalculatScore();
 	    			
 	    		}
 	    		/*GameObject house = Instantiate(housePrefab);
