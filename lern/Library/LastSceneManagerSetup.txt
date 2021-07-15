@@ -1,6 +1,5 @@
 sceneSetups:
-- path: Assets/Scene/Bagian 2/Bit Toggling And Unity Specifics/Bit Toggling and Unity
-    Specifics.unity
+- path: Assets/Scene/Bagian 2/BitBoards/ResourceGame.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
